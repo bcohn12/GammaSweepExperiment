@@ -1,2 +1,14 @@
 \section{INTRODUCTION}
 There are many papers out there.
+
+
+\\subsection{FPGA Controller implementation} % (fold)
+\label{sub:fpga_controller_implementation}
+An FPGA is a field-programmable gate array- a small circuit which can represent functions as circuit implementations.
+We opted to use FPGA in exploring these points:
+\item FPGA's run in a deterministic time, and thus their latencies are several orders of magnitude faster than even an optimized CPU implementation.
+\item FPGA's are within the realm of affordable devices, and 
+\item Although GPUs are effective with floating point presision, we found that the level of precision in our FPGA's was satisfactory for our control requirements, with [@suraj how many floating point digits does the fpga deal with?]
+\item With accurate timing being of paramount importance, the FPGA has low-variance in delivering results.
+
+% subsection fpga_controller_implementation (end)
