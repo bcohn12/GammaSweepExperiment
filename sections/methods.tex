@@ -10,12 +10,20 @@ For our tendons, we use [@victor material] strings instead of string or wire, so
 \label{sub:fpga_controller_implementation}
 An FPGA is a field-programmable gate array- a small circuit which can represent functions as circuit implementations.
 We opted to use FPGA in exploring these points:
-\item FPGA's run in a deterministic time, and thus their latencies are several orders of magnitude faster than even an optimized CPU implementation.
-\item FPGA's are within the realm of affordable devices, and 
-\item Although GPUs are effective with floating point presision, we found that the level of precision in our FPGA's was satisfactory for our control requirements, with [@suraj how many floating point digits does the fpga deal with?]
-\item With accurate timing being of paramount importance, the FPGA has low-variance in delivering results.
+\item FPGA's run in a deterministic time, and thus their latencies are several orders of magnitude faster than even an optimized CPU implementation. We have the opportunity to set the clock timing to exactly the rate we want, while GPU procesing could become lagged.
+\item With consistent clock frequency being of paramount importance, the FPGA has low-variance in delivering results, becuase it's powered by an independent hardware timer that's dedicated to the FPGA.
+
+FPGA Card (NI PXI-7952R FlexRIO)
+DAQ Card (NI PXI-625X)
+Timing I/O Card (NI PXI-6602) - Receives the encoder pulses, and receives the pulses per second to 
+DC Motor, Encoder, Gear Head  (Faulhaber 3883H024C+HEDS5500A12 + X074343)
+PXI Chassis (NI PXI-104x )
+Embedded Controller + CPU (NI PXI-8108)
 
 
+
+
+We used a PXI Bus to handle the direct memory acess between the FPGA IO buffers and the DAQ (NI PXI-625X).
 
 
 \begin{figure}[schematic_finger_overhead]
