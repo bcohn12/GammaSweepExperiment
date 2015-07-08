@@ -1,5 +1,21 @@
 \section{METHODS}
 
+ The system used for all experiments consists of a carefully selected set of hardware, sofware, and materials.
+
+For our tendons, we use [@victor material] strings instead of string or wire, so they are less prone to damage from wetting in cadaveric experiments, and so the wire stress extension is minimal.
+
+ Two identical systems were designed, one to be used primarily for cadaveric experiments (wet lab) and another for exclusively non-biological specimens (dry lab).
+
+\\subsection{FPGA Controller implementation} % (fold)
+\label{sub:fpga_controller_implementation}
+An FPGA is a field-programmable gate array- a small circuit which can represent functions as circuit implementations.
+We opted to use FPGA in exploring these points:
+\item FPGA's run in a deterministic time, and thus their latencies are several orders of magnitude faster than even an optimized CPU implementation.
+\item FPGA's are within the realm of affordable devices, and 
+\item Although GPUs are effective with floating point presision, we found that the level of precision in our FPGA's was satisfactory for our control requirements, with [@suraj how many floating point digits does the fpga deal with?]
+\item With accurate timing being of paramount importance, the FPGA has low-variance in delivering results.
+
+
 
 
 \begin{figure}[schematic_finger_overhead]
