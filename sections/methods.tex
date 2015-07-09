@@ -1,5 +1,11 @@
 \section{METHODS}
 
+Three feedback loops which all run simultaneously:
+  Force-Feedback PID Feedback Loop for generating force from voltages
+  Spinal-reflex pathway feedback loop
+  Transcortical reflex pathway feedback loop
+
+
  The system used for all experiments consists of a carefully selected set of hardware, sofware, and materials.
 
 For our tendons, we use [@victor material] strings instead of string or wire, so they are less prone to damage from wetting in cadaveric experiments, and so the wire stress extension is minimal.
@@ -18,10 +24,11 @@ DAQ Card (NI PXI-625X)
 Timing I/O Card (NI PXI-6602) - Receives the encoder pulses, and receives the pulses per second to 
 DC Motor, Encoder, Gear Head  (Faulhaber 3883H024C+HEDS5500A12 + X074343)
 PXI Chassis (NI PXI-104x )
-Embedded Controller + CPU (NI PXI-8108)
+Embedded Controller (CPU) (NI PXI-8108), which we have updated with a 4GB DDR2 RAM and a 500GB SSD
+Embedded Controller (CPU) is connected to a fast ethernet connection via a dedicated router and IP.
+Motor Driver (Western Servo Design PCU-S3 Chassis with one LDUS1 driver per channel. Channel = Muscle)
 
-
-
+** Don't call it an amplifier, it is a motor driver
 
 We used a PXI Bus to handle the direct memory acess between the FPGA IO buffers and the DAQ (NI PXI-625X).
 
